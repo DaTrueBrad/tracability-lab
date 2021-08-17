@@ -20,7 +20,7 @@ var rollbar = new Rollbar({
 
 app.use(express.json())
 
-app.use(express.static('public'))
+
 app.get('/', (req, res) => {
     rollbar.log("Hello world!");
     res.sendFile(path.join(__dirname, './public/index.html'))
@@ -35,4 +35,6 @@ app.get('/thing', (req, res) => {
     }
 })
 
+
+app.use(express.static('public'))
 app.listen(port, () => console.log(`Number ${port}, it is time for your deconstruction. Please procede to the engine bay.`))
