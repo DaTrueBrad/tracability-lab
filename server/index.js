@@ -21,7 +21,7 @@ var rollbar = new Rollbar({
 app.use(express.json())
 
 app.use(express.static('public'))
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     rollbar.log("Hello world!");
     res.sendFile(path.join(__dirname, './public/index.html'))
 })
