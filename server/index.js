@@ -3,8 +3,15 @@ const app = express()
 const path = require('path')
 const port = process.env.PORT || 4040
 
-const Rollbar = require('rollbar')
-const rollbar =
+var Rollbar = require("rollbar");
+var rollbar = new Rollbar({
+  accessToken: 'a51cff012e6845e789fec6d8d05ec400',
+  captureUncaught: true,
+  captureUnhandledRejections: true
+});
+
+// record a generic message and send it to Rollbar
+rollbar.log("Hello world!");
 
 app.use(express.json())
 
