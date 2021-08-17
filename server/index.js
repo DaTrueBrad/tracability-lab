@@ -17,6 +17,7 @@ app.use(express.json())
 app.use(express.static('public'))
 app.get('/', (req, res) => {
     rollbar.log("Hello Brady, Dominator of Code.");
+    doAThing()
     res.sendFile(path.join(__dirname, './public/index.html'))
 })
 
