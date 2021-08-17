@@ -23,7 +23,7 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     rollbar.log("Hello world!");
-    res.sendFile(path.join(__dirname, './public/index.html'))
+    res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
 app.get('/thing', (req, res) => {
