@@ -31,7 +31,7 @@ app.get('/thing', (req, res) => {
         doTheTHing()
     } catch(err) {
         console.log(err)
-        rollbar.error(err)
+        rollbar.critical(err)
     }
 })
 
